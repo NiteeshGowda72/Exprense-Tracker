@@ -18,8 +18,14 @@ n = 1
 for expense in expenses_list:
     print(f"Expense number {n}")
     print(f"Expense amount : {expense['amount']}")
-    print(f"Expense category: {expense['category']}")
+    print(f"Expense category : {expense['category']}")
     print(f"Expense description : {expense['description']}")
     print(f"Expense date : {expense['date']}")
     print("__________________________\n")
     n += 1
+
+
+total = 0
+for expense in expenses_list:
+    total += expense['amount']
+print("Total expense is: ", total)
