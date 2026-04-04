@@ -32,7 +32,3 @@ total = 0
 for expense in expenses_list:
     total += expense['amount']
 print("Total expense is: ", total)
-
-# category_input = input("Enter catogory which you want to see : ")
-# for expense in expenses_list:
-print(category_list)
