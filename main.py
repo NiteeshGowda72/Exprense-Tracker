@@ -1,4 +1,5 @@
 expenses_list = []
+category_list = []
 
 while True:
     message = input(
@@ -12,6 +13,7 @@ while True:
         'description': input("Enter the Description: "),
         'date': input("Enter the date: ")
     }
+    category_list.append(expense_data.category)
     expenses_list.append(expense_data)
 
 n = 1
@@ -22,6 +24,7 @@ for expense in expenses_list:
     print(f"Expense description : {expense['description']}")
     print(f"Expense date : {expense['date']}")
     print("__________________________\n")
+
     n += 1
 
 
@@ -29,3 +32,7 @@ total = 0
 for expense in expenses_list:
     total += expense['amount']
 print("Total expense is: ", total)
+
+# category_input = input("Enter catogory which you want to see : ")
+# for expense in expenses_list:
+print(category_list)
