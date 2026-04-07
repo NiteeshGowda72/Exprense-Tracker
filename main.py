@@ -49,3 +49,14 @@ for expense in expenses_list:
         found = True
 if not found:
     print("Entered category is not found")
+
+delete_expense = int(input("Enter the expense number you want to remove : "))
+
+index = delete_expense-1
+
+if 0 <= index < len(expenses_list):
+    expenses_list.pop(index)
+    print(f"Expense {delete_expense} is deleted")
+    display_expense()
+else:
+    print("Enter the valid expense number")
