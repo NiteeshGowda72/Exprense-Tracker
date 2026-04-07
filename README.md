@@ -1,74 +1,105 @@
-# 💰 Expense Tracker (CLI)
+# Expense Tracker (CLI Application)
 
-## 📌 Project Overview
+## Description
 
-This is a simple command-line based Expense Tracker built using Python.
-It allows users to record and manage their daily expenses efficiently.
+This is a command-line based Expense Tracker application built using Python.
+The application allows users to manage their daily expenses efficiently by providing features such as adding, viewing, editing, deleting, and filtering expenses.
 
----
-
-## 🚀 Features
-
-* Add multiple expenses
-* Store expense details:
-
-  * Amount
-  * Category
-  * Description
-  * Date
-* View all expenses in a formatted way
+All data is stored persistently using a JSON file, ensuring that expenses are saved even after the program is closed.
 
 ---
 
-## 🛠️ Technologies Used
+## Features
+
+* Add new expenses
+* View all recorded expenses
+* Calculate total spending
+* Filter expenses by category
+* Edit existing expenses
+* Delete expenses
+* Persistent storage using JSON
+
+---
+
+## Technologies Used
 
 * Python
-* Lists and Dictionaries
-* Basic CLI (Command Line Interface)
+* JSON (for data storage)
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
+```
 expense-tracker/
 │── main.py
+│── expenses.json
 │── README.md
+```
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-1. Open terminal
-2. Navigate to project folder
+1. Clone the repository:
 
-```bash
+```
+git clone https://github.com/your-username/expense-tracker.git
+```
+
+2. Navigate to the project directory:
+
+```
 cd expense-tracker
 ```
 
-3. Run the program
+3. Run the application:
 
-```bash
-python3 main.py
+```
+python main.py
 ```
 
 ---
 
-## 📈 Future Improvements
+## How It Works
 
-* Calculate total spending
-* Filter expenses by category
-* Edit and delete expenses
-* Save data to file (JSON)
-* Improve user input validation
-
----
-
-## 👨‍💻 Author
-
-Niteesh Gowda
+* The application displays a menu with multiple options.
+* Users can select an option to perform operations such as adding or viewing expenses.
+* Data is stored in a JSON file (`expenses.json`).
+* The file is automatically loaded when the program starts and updated after every modification.
 
 ---
 
-## ⭐ Note
+## Example Menu
 
-This is a beginner-friendly project and will be improved step by step.
+```
+---Menu Bar---
+1 Add Expenses
+2 View Expenses
+3 Check Total Spending
+4 Filter Expenses
+5 Delete Expense
+6 Edit Expense
+7 Exit
+```
+
+---
+
+## Future Improvements
+
+* Add input validation for better error handling
+* Convert CLI application into a graphical user interface
+* Integrate database storage (SQLite/MySQL)
+* Add category-wise summary and analytics
+
+---
+
+## Author
+
+Your Name
+
+---
+
+## License
+
+This project is open-source and available under the MIT License.
