@@ -21,7 +21,8 @@ while True:
         "Enter 3 to check total spending \n"
         "Enter 4 to filter EXpenses \n"
         "Enter 5 to delete Expense \n"
-        "Enter 6 to exit \n"))
+        "Enter 6 to edit Expense \n"
+        "Enter 7 to exit \n"))
 
     if select_menu == 1:
 
@@ -78,4 +79,31 @@ while True:
             print("Enter the valid expense number")
 
     elif select_menu == 6:
+        edit_expense = int(input("Enter the expense number to edit : "))
+        index = edit_expense-1
+
+        if 0 <= index < len(expenses_list):
+            selected_expense = expenses_list[index]
+            select_key = int(input(
+
+                "Enter 1 to edit amount \n"
+                "Enter 2 to edit Category \n"
+                "Enter 3 to edit Description \n"
+                "Enter 4 to edit Date \n"))
+
+            if select_key == 1:
+                selected_expense['amount'] = int(input("Enter the amount: "))
+            elif select_key == 2:
+                selected_expense['category'] = input("Enter the category: ")
+            elif select_key == 3:
+                selected_expense['description'] = input(
+                    "Enter the Description: ")
+            elif select_key == 4:
+                selected_expense['date'] = input("Enter the date: ")
+            print(f"Expense {edit_expense} is edited")
+            display_expense()
+
+        else:
+            print("Enter the valid expense number")
+    elif select_menu == 7:
         break
