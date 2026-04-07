@@ -1,5 +1,5 @@
 expenses_list = []
-category_list = []
+
 
 while True:
     message = input(
@@ -15,19 +15,33 @@ while True:
     }
     expenses_list.append(expense_data)
 
-n = 1
-for expense in expenses_list:
-    print(f"Expense number {n}")
-    print(f"Expense amount : {expense['amount']}")
-    print(f"Expense category : {expense['category']}")
-    print(f"Expense description : {expense['description']}")
-    print(f"Expense date : {expense['date']}")
-    print("__________________________\n")
 
-    n += 1
+def display_expense():
+    n = 1
+    for expense in expenses_list:
+        print(f"Expense number {n}")
+        print(f"Expense amount : {expense['amount']}")
+        print(f"Expense category : {expense['category']}")
+        print(f"Expense description : {expense['description']}")
+        print(f"Expense date : {expense['date']}")
+        print("__________________________\n")
 
+        n += 1
+
+
+display_expense()
 
 total = 0
 for expense in expenses_list:
     total += expense['amount']
-print("Total expense is: ", total)
+print(f"Total expense is: {total} \n")
+
+
+filter_category = input("Enter the category to filter : ")
+for expense in expenses_list:
+    if filter_category.lower() == expense['category'].lower():
+        print(f"Expense amount : {expense['amount']}")
+        print(f"Expense category : {expense['category']}")
+        print(f"Expense description : {expense['description']}")
+        print(f"Expense date : {expense['date']}")
+        print("__________________________\n")
