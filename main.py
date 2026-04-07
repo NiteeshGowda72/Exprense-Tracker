@@ -38,6 +38,7 @@ print(f"Total expense is: {total} \n")
 
 
 filter_category = input("Enter the category to filter : ")
+found = False
 for expense in expenses_list:
     if filter_category.lower() == expense['category'].lower():
         print(f"Expense amount : {expense['amount']}")
@@ -45,3 +46,6 @@ for expense in expenses_list:
         print(f"Expense description : {expense['description']}")
         print(f"Expense date : {expense['date']}")
         print("__________________________\n")
+        found = True
+if not found:
+    print("Entered category is not found")
