@@ -1,4 +1,16 @@
-expenses_list = []
+import json
+
+
+def save_data():
+    with open("expenses.json", "w") as file:
+        json.dump(expenses_list, file, indent=4)
+
+
+try:
+    with open("expenses.json", "r") as file:
+        expenses_list = json.load(file)
+except:
+    expenses_list = []
 
 
 def display_expense():
@@ -39,6 +51,7 @@ while True:
                 'date': input("Enter the date: ")
             }
             expenses_list.append(expense_data)
+            save_data()
 
     elif select_menu == 2:
         display_expense()
@@ -74,6 +87,7 @@ while True:
             expenses_list.pop(index)
             print(f"Expense {delete_expense} is deleted")
             display_expense()
+            save_data()
 
         else:
             print("Enter the valid expense number")
@@ -102,6 +116,7 @@ while True:
                 selected_expense['date'] = input("Enter the date: ")
             print(f"Expense {edit_expense} is edited")
             display_expense()
+            save_data()
 
         else:
             print("Enter the valid expense number")
